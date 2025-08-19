@@ -1,1 +1,1 @@
-# Lista de Lógica de Programação"# lista-programacao-pjcn-ladc" 
+# Lista de Lógica de Programação"
