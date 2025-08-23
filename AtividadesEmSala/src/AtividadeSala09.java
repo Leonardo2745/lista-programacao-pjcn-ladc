@@ -19,7 +19,7 @@ public class AtividadeSala09 {
         do {
             System.out.println("Escolha uma das opções abaixo:");
             System.out.println(
-                    "1 - Cadastrar novo usuário \n" +
+                            "1 - Cadastrar novo usuário \n" +
                             "2 - Editar usuário \n" +
                             "3 - Excluir usuário \n" +
                             "0 - Sair \n"
@@ -33,7 +33,7 @@ public class AtividadeSala09 {
                     System.out.println("Cadastrar novo usuário");
                     break;
             }
-        }while (sair) ;
+        }while (!sair) ;
 
 
 
