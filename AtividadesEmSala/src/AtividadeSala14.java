@@ -12,6 +12,8 @@ public class AtividadeSala14 {
 
     public static void main(String[] args) {
 
+
         imprimir(soma(20, 35));
     }
+
 }
