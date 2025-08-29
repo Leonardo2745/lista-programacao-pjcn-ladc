@@ -1,16 +1,12 @@
-import java.beans.MethodDescriptor;
-
 public class Atividade1 {
 
-    public static void main(String[] args){
-        int idade = 20;
-        final int MESES_NO_ANO = 12;
+    public static void main(String[] args) {
+        String nome = "Leonardo";
+        String cidade = "São Gonçalo";
+        final String PAIS = "Brasil";
 
-        double resultado = MESES_NO_ANO * idade;
-
-        System.out.println("Sua idade em meses é: " + resultado);
-
-
+        System.out.println("Olá, eu sou " + nome + " moro em " +
+                cidade + " / " + PAIS );
     }
 
 }
