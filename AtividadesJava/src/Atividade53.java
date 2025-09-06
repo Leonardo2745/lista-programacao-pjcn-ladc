@@ -4,21 +4,14 @@ public class Atividade53 {
 
     public static boolean ePrimo(int x) {
 
-        if (x <= 1) {
-            return false;
-        }
-        if (x == 2) {
+        if(x == 2 || x == 1)
             return true;
-        }
-        if (x % 2 == 0) {
+
+        if((x < 1) || (x % 2 == 0))
             return false;
-        }
-        for (int i = 3; i * i <= x; i += 2) {
-            if (x % i == 0) {
-                return false;
-            }
-        }
-        return true;
+
+        else
+            return (x % 1 == 0 && x % x == 0);
     }
 
     public static void main(String[] args) {
@@ -28,8 +21,8 @@ public class Atividade53 {
         System.out.println("Digite um número para saber se ele é primo: ");
         num = leia.nextInt();
 
-        System.out.println("True = É primo / False = Não é primo \n" +
-                "O número " + num + " é primo? = "+ePrimo(num));
+    String resultado = ePrimo(num)? "é primo" : "não é primo";
+        System.out.println("O número digitado " + resultado);
 
     }
 }
