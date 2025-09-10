@@ -1,5 +1,4 @@
 package atividade01;
-import java.util.Scanner;
 
 public class Lampada {
 
@@ -7,98 +6,81 @@ public class Lampada {
     private int brilho;
     private String cor;
 
-
-    public Lampada(){
+    // Construtor padrão
+    public Lampada() {
         this.ligada = false;
         this.brilho = 0;
-        this.cor = "Branca";
-    };
+        this.cor = "branca";
+    }
 
-    public Lampada(boolean ligada, int brilho, String cor){
+    // Construtor completo
+    public Lampada(boolean ligada, int brilho, String cor) {
         this.ligada = ligada;
-        this.brilho = brilho;
+        setBrilho(brilho);
         this.cor = cor;
     }
 
-
-    //Métodos
-
-    public void ligar(){
-        System.out.println("A lâmpada foi acesa!");
+    // Métodos
+    public void ligar() {
         this.ligada = true;
+        System.out.println("Lâmpada ligada.");
     }
-    public void desligar(){
-        System.out.println("A lâmpada foi apagada!");
-        this.ligada = true;
-    }
-    public void aumentarBrilho(){
-        System.out.println("Aumentar quantos níveis de brilho: ");
 
-    }
-    public void reduzirBrilho(){
-        System.out.println("Diminuir quantos níveis de brilho: " + this.brilho);
-
-    }
-    public void mudarCor(){
-        System.out.println("Cor da lâmpada: " + this.cor);
+    public void desligar() {
+        this.ligada = false;
+        System.out.println("Lâmpada desligada.");
     }
 
 
-    //Gets e sets
-
-    //gets
-
-    public boolean getLigada(){
-        return this.ligada;
+    public void aumentarBrilho(int valor) {
+        setBrilho(this.brilho + valor);
+        System.out.println("Brilho aumentado para: " + this.brilho);
     }
 
-    public int getBrilho(){
-        return this.brilho;
+    public void reduzirBrilho(int valor) {
+        setBrilho(this.brilho - valor);
+        System.out.println("Brilho reduzido para: " + this.brilho);
     }
 
-    public String getCor(){
-        return this.cor;
+    public void mudarCor(String novaCor) {
+        this.cor = novaCor;
+        System.out.println("Cor alterada para: " + this.cor);
     }
 
-    //sets
+    // Setter de brilho
 
-    public void setLigada(boolean valor){
-        this.ligada = valor;
-
-    }
-    public void setBrilho(int valor){
-
-        if (valor >= 0 && valor <= 100){
-        this.brilho = valor;
+    private void setBrilho(int brilho) {
+        if (brilho < 0) {
+            this.brilho = 0;
+        } else if (brilho > 100) {
+            this.brilho = 100;
         } else {
-            System.out.println("Valor inválido, digite um valor de 0 a 100");
+            this.brilho = brilho;
         }
-
     }
-    public void setCor(String valor){
-        this.cor = valor;
 
+
+    public void mostrarLampada() {
+        System.out.println("Ligada: " + ligada + " | Brilho: " + brilho + " | Cor: " + cor);
     }
+
 
     public static void main(String[] args) {
-        Scanner leia = new Scanner(System.in);
-
-        Lampada lampada = new Lampada(true,0,"Azul");
-
-        lampada.ligar();
-        lampada.desligar();
-        lampada.aumentarBrilho();
-        lampada.setBrilho(33);
-        System.out.println("Brilho definido para: " + lampada.getBrilho());
 
 
+        Lampada lampada1 = new Lampada();
+        lampada1.mostrarLampada();
+        lampada1.ligar();
+        lampada1.aumentarBrilho(35);
+        lampada1.mudarCor("azul");
+        lampada1.mostrarLampada();
 
+        System.out.println();
 
-
-
-
-
-
+        Lampada lampada2 = new Lampada(true, 70, "vermelha");
+        lampada2.mostrarLampada();
+        lampada2.reduzirBrilho(30);
+        lampada2.desligar();
+        lampada2.mostrarLampada();
     }
-
 }
